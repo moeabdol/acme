@@ -9,7 +9,7 @@ import { ProductService } from './product.service';
   templateUrl: 'product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
-  pageTitle: string = 'Product Detail';
+  pageTitle = 'Product Detail';
   product: IProduct;
   errorMessage: string;
 
@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let id = +this._route.snapshot.params['id'];
+    const id = +this._route.snapshot.params['id'];
     this.pageTitle += `: ${id}`;
     this.getProduct(id);
   }
