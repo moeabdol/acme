@@ -25,13 +25,10 @@ export class ProductDetailComponent implements OnInit {
   }
 
   getProduct(id: number): void {
-    this._productService.getProduct(id).subscribe(
+    this._productService.getProduct(id)
+      .subscribe(
       product => this.product = product,
       error => this.errorMessage = <any>error);
-  }
-
-  onRatingClicked(message: string): void {
-    this.pageTitle = `Product Detail: ${message}`;
   }
 
   onBack(): void {

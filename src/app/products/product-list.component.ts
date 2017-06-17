@@ -20,10 +20,9 @@ export class ProductListComponent implements OnInit {
   constructor(private _productService: ProductService) {}
 
   ngOnInit(): void {
-    this._productService.getProducts()
-      .subscribe(
-        products => this.products = products,
-        error => this.errorMessage = <any>error)
+    this._productService.getProducts().subscribe(
+      products => this.products = products,
+      error => this.errorMessage = <any>error)
   }
 
   toggleImage(): void {
